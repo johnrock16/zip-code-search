@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MaskedInput from 'react-text-mask';
 import { validateCEP } from '../../js/util';
 import { searchPlaceByZIpCode } from '../../js/ZipCodeAPI';
 
@@ -34,7 +35,14 @@ export const TextInputZipCodeSearch=({onSearch,input:{inputStyle,...otherInput}=
 
     return(
         <div style={{display:'flex'}}>
-            <input style={inputStyle} type={"text"} onChange={onHandleChange.zipCode} {...otherInput}/>
+            <MaskedInput
+                style={inputStyle}
+                type={"text"} 
+                onChange={onHandleChange.zipCode}
+                mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
+                placeholder={'01000-000'}
+                {...otherInput}
+            />
             <button style={{...styles.button,...buttonStyle}} onClick={searchButton} {...otherButton}>Search</button>
         </div>
     );

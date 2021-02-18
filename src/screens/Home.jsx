@@ -37,10 +37,10 @@ const Home=()=>{
     return(
         <div style={styles.container}>
             <Field text={'CEP'}><TextInputZipCodeSearch onSearch={updateByZipCode}/></Field>
-            <Field text={'UF'}><input type='text' value={uf} onChange={onHandleChange.uf}/></Field>
-            <Field text={'Cidade'}><input type='text' value={cidade} onChange={onHandleChange.cidade}/></Field>
-            <Field text={'Bairro'}><input type='text' value={bairro} onChange={onHandleChange.bairro}/></Field>
-            <Field text={'Logradouro'}><input type='text' value={logradouro} onChange={onHandleChange.logradouro}/></Field>
+            <Field text={'UF'}><input type='text' value={uf} placeholder={'SP'} onChange={onHandleChange.uf}/></Field>
+            <Field text={'Cidade'}><input type='text' value={cidade} placeholder={'São Paulo'} onChange={onHandleChange.cidade}/></Field>
+            <Field text={'Bairro'}><input type='text' value={bairro} placeholder={'Lapa'} onChange={onHandleChange.bairro}/></Field>
+            <Field text={'Logradouro'}><input type='text' value={logradouro} placeholder={'Rua ...'} onChange={onHandleChange.logradouro}/></Field>
             <Field text={'Complemento'}><input type='text' value={complemento} onChange={onHandleChange.complemento}/></Field>
         </div>
     );
